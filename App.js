@@ -2,8 +2,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, StatusBar } from 'react-native';
 
-// import { createStackNavigator } from '@react-navigation-stack';
-// import {createAppContainer } from 'react-navigation';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Authentication from './src/components/authentication/Authentication.js'
@@ -12,13 +11,12 @@ import Main from './src/components/main/Main.js'
 import OrderHistory from './src/components/orderHistory/OrderHistory.js'
 
 StatusBar.setHidden(true);
-
 const Stack = createStackNavigator();
 
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName = "Home">
         <Stack.Screen name="Home" component={Main} />
       </Stack.Navigator>
     </NavigationContainer>

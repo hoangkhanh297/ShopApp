@@ -1,12 +1,16 @@
 
 
 import React from 'react';
-import { Text, View, StyleSheet  } from 'react-native';
+import { Text, View, StyleSheet, Button  } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Main: () => React$Node = () => {
+
   return (
     <View style={styles.view}>
         <Text>Main</Text>
+        <Button title="Tiếp tục" onPress={() => navigation.navigate('Details')}></Button>
     </View>
   );
 };
