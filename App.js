@@ -1,14 +1,12 @@
 
 import * as React from 'react';
-import { Text, View, StyleSheet, StatusBar } from 'react-native';
+import { Text, View, StyleSheet, StatusBar,Button } from 'react-native';
 
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Authentication from './src/components/authentication/Authentication.js'
-import ChangeInfo from './src/components/changeInfo/ChangeInfo.js'
-import Main from './src/components/main/Main.js'
-import OrderHistory from './src/components/orderHistory/OrderHistory.js'
+import Home from './src/components/Home'
+import SigninScreen from './src/components/SignIn'
 
 StatusBar.setHidden(true);
 const Stack = createStackNavigator();
@@ -16,8 +14,9 @@ const Stack = createStackNavigator();
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "Home">
-        <Stack.Screen name="Home" component={Main} />
+      <Stack.Navigator initialRouteName = "HomeScreen">
+        <Stack.Screen name="HomeScreen" component={Home} />
+        <Stack.Screen name="SigninScreen" component={SigninScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
